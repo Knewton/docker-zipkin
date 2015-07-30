@@ -5,7 +5,8 @@
 
 scala \
     -classpath "/tdist-zipkin-collector.jar" com.knewton.tdist.zipkin.receiver.kinesis.KinesisReceiverApp\
-    -zipkin.store.cassie.dest=$DB_PORT_9160_TCP_ADDR:9160\
+    -zipkin.storage.redis.host==$DB_HOST\
+    -zipkin.storage.redis.ttl=168\
     -kinesis.application.name=ZipkinCollector1\
     -kinesis.stream.name=$ENVIRONMENT_NAME-zipkin\
     -aws.access.key=$ACCESS_KEY\
