@@ -1,9 +1,4 @@
 #!/bin/bash
-if [[ -z $DB_PORT_7000_TCP_ADDR ]]; then
-  echo "** ERROR: You need to link the Redis container as db."
-  exit 1
-fi
-
 cd zipkin
 
 SERVICE_NAME="zipkin-query-service"
