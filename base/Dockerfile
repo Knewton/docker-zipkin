@@ -27,4 +27,4 @@ RUN \
 CMD \
   ["/bin/bash"]
 
-RUN (cd zipkin; ./gradlew assembleDist)
+RUN (cd zipkin; ./gradlew installDist -x test)

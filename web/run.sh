@@ -12,5 +12,4 @@ ROOTURL="-zipkin.web.rootUrl=${ROOTURL:-DEFAULT_ROOTURL}"
 
 echo "** Starting ${SERVICE_NAME}..."
 cd zipkin
-./gradlew installDist -x test
 ./$SERVICE_NAME/build/install/$SERVICE_NAME/bin/$SERVICE_NAME -zipkin.web.query.dest=${QUERY_ADDR} $ROOTURL
