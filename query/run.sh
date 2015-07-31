@@ -17,7 +17,7 @@ import com.twitter.zipkin.storage.Store
 
 // development mode.
 
-val host = "${DB_HOST}"
+val host = "$DB_HOST"
 val port = 6379
 val ttl: Duration = Duration.fromSeconds(604800)
 
