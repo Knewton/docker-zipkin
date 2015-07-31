@@ -27,4 +27,4 @@ RUN \
 CMD \
   ["/bin/bash"]
 
-RUN (cd zipkin; bin/sbt compile)
+RUN (cd zipkin; ./gradlew installDist -x test)
