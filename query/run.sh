@@ -24,4 +24,4 @@ QueryServiceBuilder(storeBuilder)
 EOF
 
 echo "** Starting ${SERVICE_NAME}..."
-bin/sbt "project $SERVICE_NAME" "run -f $CONFIG"
+./gradlew :zipkin-query-service:run -PconfigKey=redis
