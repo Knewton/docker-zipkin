@@ -25,10 +25,10 @@ elif [ $name == "collector" ]; then
 	docker run -i --link="${NAME_PREFIX}cassandra:db" -p 9410:9410 -p 9903:9903 --name="${NAME_PREFIX}collector" -t "${IMG_PREFIX}collector"
 elif [ $name == "kinesis-collector" ]; then
 	echo "** Starting zipkin-kinesis-collector"
-	docker run -i " -p 9410:9410 -p 9903:9903 --name="${NAME_PREFIX}kinesis-collector" -t "${IMG_PREFIX}kinesis-collector"
+	docker run -i -p 9410:9410 -p 9903:9903 --name="${NAME_PREFIX}kinesis-collector" -t "${IMG_PREFIX}kinesis-collector"
 elif [ $name == "query" ]; then
 	echo "** Starting zipkin-query"
-	docker run -i " -p 9411:9411 --name="${NAME_PREFIX}query" -t "${IMG_PREFIX}query"
+	docker run -i -p 9411:9411 --name="${NAME_PREFIX}query" -t "${IMG_PREFIX}query"
 elif [ $name == "web" ]; then
 	echo "** Starting zipkin-web"
 	docker run -i --link="${NAME_PREFIX}query:query" -p 8080:$PUBLIC_PORT -e "ROOTURL=${ROOT_URL}" --name="${NAME_PREFIX}web" -t "${IMG_PREFIX}web"
